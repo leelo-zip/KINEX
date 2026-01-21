@@ -1,10 +1,12 @@
 """
-Gait Rehabilitation Simulation System - Version 2.0 (Engineering Release)
+Gait Rehabilitation Simulation System - Version 3.0 (Calibration & Config Update)
 Author: Jasmine Leelo | Oura Engineering Application
 Description:
     Real-time bridge between wearable IMU/EMG sensors and OpenSim.
-    Features automated gyroscope calibration, robust error handling,
-    and relative path management.
+    Features:
+    - Phase 1: Automated Gyroscope Calibration (Startup Routine)
+    - Robust Configuration Management
+    - Input Sanitization & Error Logging
 """
 
 import os
@@ -110,7 +112,11 @@ class BiofeedbackSystem:
 
         try:
             if not os.path.exists(model_path):
-                raise FileNotFoundError(f"Model file not found at {model_path}")
+                # Fallback: Check if file is in the same directory
+                model_path = os.path.join(script_dir, CONFIG["MODEL"]["FILE_NAME"])
+
+            if not os.path.exists(model_path):
+                raise FileNotFoundError(f"Model file not found. Checked: {model_path}")
 
             self.model = osim.Model(model_path)
             self.model.setUseVisualizer(True)
