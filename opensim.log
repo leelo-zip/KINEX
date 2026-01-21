@@ -1,0 +1,604 @@
+[2025-11-25 22:19:10.019] [info] Updating Model file from 20303 to latest format...
+[2025-11-25 22:19:10.036] [info] Loaded model 3DGaitModel2392 from file gait2392_simbody.osim
+[2025-11-25 22:19:10.038] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-25 22:19:10.038] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-25 22:20:45.809] [info] Updating Model file from 20303 to latest format...
+[2025-11-25 22:20:45.832] [info] Loaded model 3DGaitModel2392 from file gait2392_simbody.osim
+[2025-11-25 22:20:45.833] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-25 22:20:45.834] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-25 22:50:17.571] [info] Updating Model file from 20303 to latest format...
+[2025-11-25 22:50:17.589] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-25 22:50:17.593] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-25 22:50:17.593] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open treadmill.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\treadmill.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\treadmill.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open sacrum.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\sacrum.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\sacrum.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open pelvis.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\pelvis.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\pelvis.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open l_pelvis.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_pelvis.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_pelvis.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open femur.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\femur.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\femur.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open tibia.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\tibia.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\tibia.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.738] [warning] Visualizer couldn't open fibula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\fibula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\fibula.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open talus.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\talus.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\talus.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open foot.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\foot.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\foot.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open bofoot.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\bofoot.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\bofoot.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open l_femur.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_femur.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_femur.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open l_tibia.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_tibia.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_tibia.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open l_fibula.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_fibula.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_fibula.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.740] [warning] Visualizer couldn't open l_talus.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_talus.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_talus.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open l_foot.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_foot.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_foot.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open l_bofoot.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\l_bofoot.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\l_bofoot.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open hat_spine.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\hat_spine.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\hat_spine.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open hat_jaw.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\hat_jaw.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\hat_jaw.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open hat_skull.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\hat_skull.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\hat_skull.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:50:17.741] [warning] Visualizer couldn't open hat_ribs.vtp because: SimTK Exception thrown at PolygonalMesh.cpp:411:
+  Error detected by Simbody method PolygonalMesh::loadVtpFile(): Attempt to load a VTK PolyData (.vtp) file from file name 'd:\OpenSim B4\Geometry\hat_ribs.vtp' failed with message:
+  SimTK Exception thrown at Xml.cpp:108:
+  Error detected by Simbody method Xml::readFromFile(): Failed to load the Xml file 'd:\OpenSim B4\Geometry\hat_ribs.vtp' with error 'Error document empty. (line=0, col=0)'.
+  (Required condition 'loadOK' was not met.)
+
+  (Required condition '!"failed"' was not met.)
+
+[2025-11-25 22:51:20.639] [info] Updating Model file from 20303 to latest format...
+[2025-11-25 22:51:20.658] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-25 22:51:20.659] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-25 22:51:20.660] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-25 22:53:17.148] [info] Updating Model file from 20303 to latest format...
+[2025-11-25 22:53:17.166] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-25 22:53:17.167] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-25 22:53:17.167] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:53:27.698] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:53:27.716] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:53:27.721] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:53:27.722] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:53:39.132] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:53:39.151] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:53:39.152] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:53:39.153] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:54:08.256] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:54:08.273] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:54:08.277] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:54:08.278] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:55:00.231] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:55:00.247] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:55:00.248] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:55:00.249] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:55:14.098] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:55:14.115] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:55:14.116] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:55:14.117] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:58:02.586] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:58:02.604] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:58:02.604] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:58:02.605] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:58:05.846] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:58:05.867] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:58:05.868] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:58:05.869] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 10:58:09.718] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 10:58:09.734] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 10:58:09.735] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 10:58:09.735] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:00:16.437] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:00:16.475] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:00:16.476] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:00:16.477] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:02:05.284] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:02:05.304] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:02:05.305] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:02:05.306] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:02:24.664] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:02:24.680] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:02:24.681] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:02:24.682] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:03:52.242] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:03:52.260] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:03:52.263] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:03:52.264] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:04:34.208] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:04:34.225] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:04:34.226] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:04:34.227] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:04:47.846] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:04:47.863] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:04:47.864] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:04:47.865] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:05:29.089] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:05:29.107] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:05:29.108] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:05:29.109] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:06:11.838] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:06:11.854] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:06:11.855] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:06:11.856] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:07:29.874] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:07:29.890] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:07:29.891] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:07:29.892] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:08:51.726] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:08:51.742] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:08:51.743] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:08:51.744] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:10:15.355] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:10:15.373] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:10:15.374] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:10:15.375] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:10:28.393] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:10:28.410] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:10:28.411] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:10:28.411] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:10:35.752] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:10:35.770] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:10:35.770] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:10:35.771] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:11:42.783] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:11:42.800] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:11:42.801] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:11:42.801] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:11:57.424] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:11:57.441] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:11:57.442] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:11:57.443] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:12:04.638] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:12:04.655] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:12:04.656] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:12:04.656] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:12:36.779] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:12:36.796] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:12:36.796] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:12:36.797] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:12:48.250] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:12:48.267] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:12:48.268] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:12:48.269] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:12:57.137] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:12:57.153] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:12:57.154] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:12:57.155] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:13:14.822] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:13:14.841] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:13:14.842] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:13:14.843] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:13:34.612] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:13:34.629] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:13:34.630] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:13:34.630] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:15:06.792] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:15:06.809] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:15:06.809] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:15:06.810] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:21:33.619] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:21:33.636] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:21:33.637] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:21:33.637] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 11:32:50.836] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 11:32:50.853] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 11:32:50.854] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 11:32:50.855] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 15:24:48.834] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 15:24:48.863] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 15:24:48.865] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 15:24:48.866] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 15:28:03.793] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 15:28:03.812] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 15:28:03.813] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 15:28:03.814] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-26 15:57:28.577] [info] Updating Model file from 20303 to latest format...
+[2025-11-26 15:57:28.593] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-26 15:57:28.594] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-26 15:57:28.595] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:22:17.372] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:22:17.391] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:22:17.396] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:22:17.398] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:24:11.439] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:24:11.458] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:24:11.459] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:24:11.460] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:27:18.424] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:27:18.441] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:27:18.442] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:27:18.443] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:28:16.968] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:28:16.994] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:28:16.995] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:28:16.996] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:47:32.806] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:47:32.826] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:47:32.830] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:47:32.831] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:49:56.769] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:49:56.787] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:49:56.788] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:49:56.789] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:50:14.108] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:50:14.124] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:50:14.125] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:50:14.126] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:50:28.351] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:50:28.368] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:50:28.368] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:50:28.369] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:52:29.836] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:52:29.854] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:52:29.855] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:52:29.856] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:52:37.681] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:52:37.698] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:52:37.699] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:52:37.699] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:57:01.815] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:57:01.832] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:57:01.832] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:57:01.833] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:57:13.374] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:57:13.391] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:57:13.392] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:57:13.393] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:57:19.566] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:57:19.584] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:57:19.584] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:57:19.585] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 10:57:29.397] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 10:57:29.413] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 10:57:29.414] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 10:57:29.415] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 11:00:56.577] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 11:00:56.594] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 11:00:56.595] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 11:00:56.596] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 11:01:13.491] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 11:01:13.508] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 11:01:13.509] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 11:01:13.510] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 11:02:45.956] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 11:02:45.973] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 11:02:45.974] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 11:02:45.974] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 11:13:08.755] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 11:13:08.771] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 11:13:08.772] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 11:13:08.773] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 11:42:26.191] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 11:42:26.209] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 11:42:26.215] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 11:42:26.216] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:06:18.841] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:06:18.857] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:06:18.857] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:06:18.858] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:08:06.977] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:08:06.993] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:08:06.993] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:08:06.994] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:09:11.373] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:09:11.388] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:09:11.389] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:09:11.390] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:12:01.510] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:12:01.525] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:12:01.526] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:12:01.527] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:12:25.310] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:12:25.327] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:12:25.328] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:12:25.329] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:12:43.417] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:12:43.432] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:12:43.433] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:12:43.434] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:13:28.991] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:13:29.009] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:13:29.010] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:13:29.011] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:17:27.059] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:17:27.075] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:17:27.076] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:17:27.077] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:17:44.154] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:17:44.171] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:17:44.171] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:17:44.172] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:20:36.958] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:20:36.974] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:20:36.975] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:20:36.975] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:20:46.922] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:20:46.939] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:20:46.940] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:20:46.941] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:21:12.418] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:21:12.434] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:21:12.435] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:21:12.435] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 12:21:31.164] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 12:21:31.180] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 12:21:31.181] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 12:21:31.181] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-28 14:12:59.142] [info] Updating Model file from 20303 to latest format...
+[2025-11-28 14:12:59.162] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-28 14:12:59.163] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-28 14:12:59.165] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-29 15:40:25.757] [info] Updating Model file from 20303 to latest format...
+[2025-11-29 15:40:25.805] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-29 15:40:25.811] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-29 15:40:25.813] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-11-29 15:41:41.561] [info] Updating Model file from 20303 to latest format...
+[2025-11-29 15:41:41.579] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-11-29 15:41:41.580] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-11-29 15:41:41.581] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-01 16:49:20.144] [info] Updating Model file from 20303 to latest format...
+[2025-12-01 16:49:20.489] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-01 16:49:20.491] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-01 16:49:20.494] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-03 18:18:44.858] [info] Updating Model file from 20303 to latest format...
+[2025-12-03 18:18:44.876] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-03 18:18:44.877] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-03 18:18:44.877] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-03 18:19:25.101] [info] Updating Model file from 20303 to latest format...
+[2025-12-03 18:19:25.122] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-03 18:19:25.123] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-03 18:19:25.125] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-03 23:33:40.837] [info] Updating Model file from 20303 to latest format...
+[2025-12-03 23:33:40.854] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-03 23:33:40.858] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-03 23:33:40.858] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:47:56.140] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:47:56.159] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:47:56.163] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:47:56.164] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:49:13.722] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:49:13.742] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:49:13.743] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:49:13.744] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:50:34.777] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:50:34.794] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:50:34.795] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:50:34.796] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:50:49.469] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:50:49.486] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:50:49.487] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:50:49.488] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:51:00.370] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:51:00.387] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:51:00.388] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:51:00.389] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:51:22.224] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:51:22.240] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:51:22.241] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:51:22.242] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:51:42.398] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:51:42.415] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:51:42.416] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:51:42.417] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:52:26.960] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:52:26.977] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:52:26.978] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:52:26.979] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:52:48.295] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:52:48.311] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:52:48.312] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:52:48.313] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:53:22.781] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:53:22.823] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:53:22.825] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:53:22.826] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:53:52.008] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:53:52.024] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:53:52.024] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:53:52.025] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:54:41.056] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:54:41.072] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:54:41.072] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:54:41.073] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:55:50.395] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:55:50.411] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:55:50.412] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:55:50.413] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:57:23.692] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:57:23.710] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:57:23.719] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:57:23.720] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:57:50.671] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:57:50.688] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:57:50.691] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:57:50.691] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:57:57.660] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:57:57.677] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:57:57.678] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:57:57.679] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 13:59:10.862] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 13:59:10.881] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 13:59:10.882] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 13:59:10.884] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:06:35.898] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:06:35.915] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:06:35.915] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:06:35.916] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:11:35.443] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:11:35.460] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:11:35.461] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:11:35.462] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:11:49.263] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:11:49.281] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:11:49.281] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:11:49.282] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:12:09.991] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:12:10.008] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:12:10.009] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:12:10.010] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:18:52.585] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:18:52.601] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:18:52.602] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:18:52.603] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:19:45.177] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:19:45.193] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:19:45.193] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:19:45.194] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:21:39.990] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:21:40.007] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:21:40.008] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:21:40.009] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:21:48.684] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:21:48.702] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:21:48.703] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:21:48.704] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:22:22.065] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:22:22.082] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:22:22.083] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:22:22.084] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:26:10.884] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:26:10.902] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:26:10.903] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:26:10.904] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:26:52.294] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:26:52.312] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:26:52.313] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:26:52.314] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:33:44.433] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:33:44.451] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:33:44.452] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:33:44.453] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2025-12-04 14:39:26.241] [info] Updating Model file from 20303 to latest format...
+[2025-12-04 14:39:26.259] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2025-12-04 14:39:26.260] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2025-12-04 14:39:26.262] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2026-01-20 10:35:58.127] [info] Updating Model file from 20303 to latest format...
+[2026-01-20 10:35:58.146] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2026-01-20 10:35:58.147] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2026-01-20 10:35:58.148] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
+[2026-01-20 11:01:19.969] [info] Updating Model file from 20303 to latest format...
+[2026-01-20 11:01:19.986] [info] Loaded model 3DGaitModel2392 from file D:\OpenSim B4\gait2392_simbody.osim
+[2026-01-20 11:01:19.989] [info] ControllerSet 'Controllers' was renamed and is being reset to 'controllerset'.
+[2026-01-20 11:01:19.990] [info] ComponentSet 'MiscComponents' was renamed and is being reset to 'componentset'.
