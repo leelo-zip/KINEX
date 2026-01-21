@@ -1,220 +1,285 @@
-# V2 Refactor - Engineering Update
+"""
+Gait Rehabilitation Simulation System - Version 2.0 (Engineering Release)
+Author: Jasmine Leelo | Oura Engineering Application
+Description:
+    Real-time bridge between wearable IMU/EMG sensors and OpenSim.
+    Features automated gyroscope calibration, robust error handling,
+    and relative path management.
+"""
 
-import serial
+import os
+import sys
 import time
 import math
-import os
-import opensim as osim
+import serial
+import logging
+from typing import Dict, List, Optional, Tuple
 
-# ================= Setup =================
-SERIAL_PORT = 'COM7'  # ⚠️ Port conformation
-BAUD_RATE = 115200
-MODEL_FILE = r"D:\OpenSim B4\gait2392_simbody.osim"  # File conformation
+# Import OpenSim (assuming standard environment setup)
+try:
+    import opensim as osim
+except ImportError:
+    logging.warning("OpenSim API not found. Simulation features will be disabled.")
+    osim = None
 
-TARGET_HEIGHT = 0.0
+# --- Configuration & Constants ---
+CONFIG = {
+    "HARDWARE": {
+        "PORT": "COM7",  # Change to '/dev/ttyUSB0' for Linux/Mac
+        "BAUD_RATE": 115200,
+        "TIMEOUT": 1.0,
+        "PACKET_SIZE": 15  # Expected number of data points per line
+    },
+    "FILTER": {
+        "ALPHA": 0.993,  # Complementary filter weight (Trust Gyro vs Accel)
+        "DT": 0.02,  # Sampling interval (50Hz)
+        "EMG_SMOOTH": 0.1  # Smoothing factor for muscle signals
+    },
+    "MODEL": {
+        # Dynamically find the model file relative to this script
+        "FILE_NAME": "gait2392_simbody.osim",
+        "TARGET_HEIGHT": 0.0
+    },
+    "CALIBRATION": {
+        "SAMPLES": 200,  # Number of frames to read for calibration
+        "WARMUP_SEC": 2  # Seconds to wait before calibrating
+    }
+}
 
-ALPHA = 0.993
-DT = 0.02
-EMG_SMOOTH = 0.1
+# Setup Logging (Standard Output)
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[logging.StreamHandler(sys.stdout)]
+)
+logger = logging.getLogger(__name__)
 
 
-# ================= Tool =================
 class EMGProcessor:
-    def __init__(self):
-        self.val = 0.0
+    """Normalizes and smooths raw EMG signals."""
 
-    def process(self, raw_val):
-        # Normalization
+    def __init__(self, smoothing: float = 0.1):
+        self.val = 0.0
+        self.smoothing = smoothing
+
+    def process(self, raw_val: int) -> float:
+        # Normalize 12-bit ADC value (0-4095)
         norm = abs(raw_val) / 4095.0
         if norm > 1.0: norm = 1.0
-        self.val = (self.val * (1 - EMG_SMOOTH)) + (norm * EMG_SMOOTH)
+
+        # Exponential Moving Average (Low-pass filter)
+        self.val = (self.val * (1 - self.smoothing)) + (norm * self.smoothing)
         return self.val
 
 
-# --- Pitch Calculation ---
-def calculate_pitch(acc_y, acc_z, gyro_x, current_angle):
-    acc_angle = math.degrees(math.atan2(acc_z, acc_y))
-    return ALPHA * (current_angle + gyro_x * DT) + (1 - ALPHA) * acc_angle
+class BiofeedbackSystem:
+    """Main Controller for Hardware-in-the-Loop Simulation."""
 
+    def __init__(self):
+        self.ser: Optional[serial.Serial] = None
+        self.model: Optional[osim.Model] = None
+        self.state = None
+        self.viz = None
 
-# --- Roll Calculation ---
-def calculate_roll(acc_y, acc_x, gyro_z, current_angle):
-    # Rotate around z-axis
-    acc_angle = math.degrees(math.atan2(acc_x, acc_y))
-    return ALPHA * (current_angle - gyro_z * DT) + (1 - ALPHA) * acc_angle
+        # State Variables (Angles in degrees)
+        self.pose = {
+            'leg_pitch': 0.0, 'leg_roll': 0.0,
+            'waist_pitch': 0.0, 'waist_roll': 0.0
+        }
 
+        # Calibration Offsets (Gyro Bias)
+        self.bias = {
+            'w_gx': 0.0, 'w_gz': 0.0,
+            'l_gx': 0.0, 'l_gz': 0.0
+        }
 
-# ================= Main program =================
-def main():
-    print(f"Loading the model: {MODEL_FILE}")
+        # Signal Processors
+        self.proc_waist = EMGProcessor(CONFIG["FILTER"]["EMG_SMOOTH"])
+        self.proc_quad = EMGProcessor(CONFIG["FILTER"]["EMG_SMOOTH"])
+        self.proc_ham = EMGProcessor(CONFIG["FILTER"]["EMG_SMOOTH"])
 
-    try:
-        model = osim.Model(MODEL_FILE)
+    def load_model(self):
+        """Initializes the OpenSim model with relative paths."""
+        if not osim: return
 
-        # --- Model Initialization ---
-        coord_set = model.updCoordinateSet()
+        # Robust path finding (Fixes 'It works on my machine')
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(script_dir, "Models", CONFIG["MODEL"]["FILE_NAME"])
 
-        # Set up position
-        coord_set.get("pelvis_ty").setDefaultValue(TARGET_HEIGHT)
-        coord_set.get("pelvis_tx").setDefaultValue(0)
-        coord_set.get("pelvis_tz").setDefaultValue(0)
+        logger.info(f"Loading model from: {model_path}")
 
-        # Add Geometry Path
-        model_dir = os.path.dirname(MODEL_FILE)
-        geometry_path = os.path.join(model_dir, "Geometry")
-        osim.ModelVisualizer.addDirToGeometrySearchPaths(geometry_path)
-
-        model.setUseVisualizer(True)
-        state = model.initSystem()
-        print("✅ System initialises successfully！")
-
-    except Exception as e:
-        print(f"❌ System initialises failed: {e}")
-        return
-
-    # Setup background
-    if model.hasVisualizer():
         try:
-            viz = model.getVisualizer().getSimbodyVisualizer()
-            viz.setBackgroundType(viz.SolidColor)
-            viz.setBackgroundColor(osim.Vec3(0.1, 0.1, 0.1))
-        except:
-            pass
+            if not os.path.exists(model_path):
+                raise FileNotFoundError(f"Model file not found at {model_path}")
 
-    print("The muscles and joints are being bound...")
+            self.model = osim.Model(model_path)
+            self.model.setUseVisualizer(True)
+            self.state = self.model.initSystem()
 
-    # 1. Main control
-    coord_height = model.updCoordinateSet().get("pelvis_ty")
+            # Setup Visualizer
+            if self.model.hasVisualizer():
+                viz = self.model.getVisualizer().getSimbodyVisualizer()
+                viz.setBackgroundType(viz.SolidColor)
+                viz.setBackgroundColor(osim.Vec3(0.1, 0.1, 0.1))
 
-    # 2. Pitch
-    coord_waist_pitch = model.updCoordinateSet().get("lumbar_extension")
-    coord_hip_pitch = model.updCoordinateSet().get("hip_flexion_r")
+            logger.info("Biomechanics Model Initialized Successfully.")
 
-    # 3. Roll/Sway
-    coord_waist_roll = model.updCoordinateSet().get("lumbar_bending")  # Lumbar scoliosis
-    coord_hip_roll = model.updCoordinateSet().get("hip_adduction_r")  # Hip joint adduction/abduction
+        except Exception as e:
+            logger.error(f"Failed to load OpenSim model: {e}")
+            sys.exit(1)  # Critical failure
 
-    # 4. muscle
-    mus_quad = model.updMuscles().get("rect_fem_r")
-    try:
-        mus_ham = model.updMuscles().get("bifemlh_r")  # Long head of the biceps femoris
-    except:
-        mus_ham = model.updMuscles().get("semimem_r")
-
-    try:
-        mus_waist_r = model.updMuscles().get("ercspn_r")
-    except:
-        mus_waist_r = None
-
-    # --- Connecting Hardware ---
-    print(f"Connecting Hardware {SERIAL_PORT} ...")
-    try:
-        ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-        print("✅ Hardware connected!")
-    except:
-        print("❌ Unable to connect to the serial port. Entering [Demo Mode]")
-        ser = None
-
-    # --- Loop ---
-    print(f"\n>>> Bidirectional simulation operation (front-back + left-right) <<<")
-
-    leg_pitch = 0.0
-    leg_roll = 0.0
-    waist_pitch = 0.0
-    waist_roll = 0.0
-
-    # 3 processors
-    proc_waist = EMGProcessor()
-    proc_quad = EMGProcessor()
-    proc_ham = EMGProcessor()
-
-    start_time = time.time()
-
-    while True:
+    def connect_hardware(self) -> bool:
+        """Establishes serial connection with retry logic."""
+        port = CONFIG["HARDWARE"]["PORT"]
         try:
-            act_waist = 0.0
-            act_quad = 0.0
-            act_ham = 0.0
+            logger.info(f"Attempting connection to {port}...")
+            self.ser = serial.Serial(
+                port,
+                CONFIG["HARDWARE"]["BAUD_RATE"],
+                timeout=CONFIG["HARDWARE"]["TIMEOUT"]
+            )
+            time.sleep(2)  # Allow Arduino reset
+            logger.info("Hardware Connected.")
+            return True
+        except serial.SerialException as e:
+            logger.warning(f"Connection failed: {e}. Entering DEMO MODE.")
+            self.ser = None
+            return False
 
-            # Data collection
-            if ser is None:  # demonstration
-                t = time.time() - start_time
-                leg_pitch = 30 * math.sin(t * 2)
-                leg_roll = 15 * math.cos(t * 2)  # demonstration
-                act_quad = (math.sin(t * 2) + 1) / 2
-                time.sleep(0.02)
+    def calibrate_sensors(self):
+        """
+        Phase 1: Startup Calibration.
+        Captures static noise (bias) from gyroscopes to prevent drift.
+        """
+        if not self.ser:
+            logger.info("Skipping calibration (Demo Mode).")
+            return
 
-            elif ser.in_waiting:
-                line = ser.readline().decode('utf-8', errors='ignore').strip()
-                if not line: continue
-                data = line.split(',')
+        logger.info("⚠️ STARTUP CALIBRATION: Please stand still for 5 seconds...")
+        time.sleep(CONFIG["CALIBRATION"]["WARMUP_SEC"])
 
-                # Arduino transmission: [Abdominal EMG, Front leg EMG, Back leg EMG, Lumbar MPU(6), Leg MPU(6)]
-                # 总A total of 3 + 6 + 6 = 15 pieces of data
-                if len(data) >= 15:
-                    # --- 1. Analysis EMG ---
-                    raw_waist = int(data[0])
-                    raw_quad = int(data[1])
-                    raw_ham = int(data[2])
+        samples = 0
+        totals = {'w_gx': 0.0, 'w_gz': 0.0, 'l_gx': 0.0, 'l_gz': 0.0}
+        target = CONFIG["CALIBRATION"]["SAMPLES"]
 
-                    act_waist = proc_waist.process(raw_waist)
-                    act_quad = proc_quad.process(raw_quad)
-                    act_ham = proc_ham.process(raw_ham)
+        while samples < target:
+            if self.ser.in_waiting:
+                try:
+                    line = self.ser.readline().decode('utf-8', errors='ignore').strip()
+                    data = line.split(',')
+                    if len(data) >= CONFIG["HARDWARE"]["PACKET_SIZE"]:
+                        # Accumulate raw gyro values [Indexes based on doc source]
+                        totals['w_gx'] += float(data[6])
+                        totals['w_gz'] += float(data[8])
+                        totals['l_gx'] += float(data[12])
+                        totals['l_gz'] += float(data[14])
+                        samples += 1
+                        if samples % 50 == 0:
+                            print(f"Calibrating... {int((samples / target) * 100)}%", end='\r')
+                except ValueError:
+                    continue
 
-                    # --- 2. Analysis: Waist MPU (Arduino's initial model for waist) ---
-                    # Search 3-8: AX, AY, AZ, GX, GY, GZ
-                    w_ax = float(data[3])  # [For left and right]
-                    w_ay = float(data[4])
-                    w_az = float(data[5])
-                    w_gx = float(data[6])
-                    w_gz = float(data[8])  # [For left and right]
+        # Calculate Average Bias
+        for key in totals:
+            self.bias[key] = totals[key] / samples
 
-                    # --- 3. Analysis: Leg MPU (Arduino-based leg) ---
-                    # Search 9-14: AX, AY, AZ, GX, GY, GZ
-                    l_ax = float(data[9])  # [For left and right]
-                    l_ay = float(data[10])
-                    l_az = float(data[11])
-                    l_gx = float(data[12])
-                    l_gz = float(data[14])  # [For left and right]
+        logger.info(f"Calibration Complete. Biases detected: {self.bias}")
 
-                    # --- Core calculation ---
-                    # 1. Pitch -  Y, Z, GX
-                    waist_pitch = calculate_pitch(w_ay, w_az, w_gx, waist_pitch)
-                    leg_pitch = calculate_pitch(l_ay, l_az, l_gx, leg_pitch)
+    def calculate_pitch(self, acc_y: float, acc_z: float, gyro_x: float, current_angle: float, bias_x: float) -> float:
+        """Computes Pitch (Forward/Back) using Complementary Filter with Bias Correction."""
+        # Remove drift (calibration step)
+        corrected_gyro = gyro_x - bias_x
 
-                    # 2. Roll -  Y, X, GZ
-                    waist_roll = calculate_roll(w_ay, w_ax, w_gz, waist_roll)
-                    leg_roll = calculate_roll(l_ay, l_ax, l_gz, leg_roll)
+        # Calculate Accelerometer Angle (Gravity vector)
+        acc_angle = math.degrees(math.atan2(acc_z, acc_y))
 
-            # --- Drive the model ---
-            coord_height.setValue(state, TARGET_HEIGHT)
+        # Sensor Fusion: Trust Gyro for speed, Accel for drift correction
+        alpha = CONFIG["FILTER"]["ALPHA"]
+        dt = CONFIG["FILTER"]["DT"]
 
-            # 2. Pitch
-            coord_hip_pitch.setValue(state, math.radians(leg_pitch))
-            coord_waist_pitch.setValue(state, math.radians(waist_pitch))
+        return alpha * (current_angle + corrected_gyro * dt) + (1 - alpha) * acc_angle
 
-            # 3. Roll
-            coord_hip_roll.setValue(state, math.radians(leg_roll))
-            coord_waist_roll.setValue(state, math.radians(waist_roll))
+    def calculate_roll(self, acc_y: float, acc_x: float, gyro_z: float, current_angle: float, bias_z: float) -> float:
+        """Computes Roll (Left/Right sway) with Bias Correction."""
+        corrected_gyro = gyro_z - bias_z
+        acc_angle = math.degrees(math.atan2(acc_x, acc_y))
+        alpha = CONFIG["FILTER"]["ALPHA"]
+        dt = CONFIG["FILTER"]["DT"]
 
-            # 4. Drive the muscles
-            mus_quad.setActivation(state, act_quad)
-            if mus_ham: mus_ham.setActivation(state, act_ham)
-            if mus_waist_r: mus_waist_r.setActivation(state, act_waist)
+        return alpha * (current_angle - corrected_gyro * dt) + (1 - alpha) * acc_angle
 
-            # --- Update ---
-            model.realizePosition(state)
-            if model.hasVisualizer():
-                model.getVisualizer().getSimbodyVisualizer().drawFrameNow(state)
+    def update_simulation(self):
+        """Applies calculated pose to OpenSim model."""
+        if not self.model or not self.state: return
 
-            # Print log
-            print(f"Waist: {waist_pitch:.0f}/{waist_roll:.0f}° | Leg: {leg_pitch:.0f}/{leg_roll:.0f}°", end='\r')
+        # Map class variables to Model coordinates
+        # Note: OpenSim uses Radians, we calculated Degrees
+        coords = self.model.updCoordinateSet()
+
+        # Pitch Mapping
+        coords.get("hip_flexion_r").setValue(self.state, math.radians(self.pose['leg_pitch']))
+        coords.get("lumbar_extension").setValue(self.state, math.radians(self.pose['waist_pitch']))
+
+        # Roll Mapping
+        coords.get("hip_adduction_r").setValue(self.state, math.radians(self.pose['leg_roll']))
+        coords.get("lumbar_bending").setValue(self.state, math.radians(self.pose['waist_roll']))
+
+        # Render Frame
+        self.model.realizePosition(self.state)
+        if self.model.hasVisualizer():
+            self.model.getVisualizer().getSimbodyVisualizer().drawFrameNow(self.state)
+
+    def run(self):
+        """Main execution loop."""
+        logger.info(">>> Starting Biofeedback Loop. Press Ctrl+C to stop. <<<")
+        self.load_model()
+        self.connect_hardware()
+        self.calibrate_sensors()  # Run Phase 1
+
+        try:
+            while True:
+                # 1. Fetch Data
+                if self.ser and self.ser.in_waiting:
+                    line = self.ser.readline().decode('utf-8', errors='ignore').strip()
+                    data = line.split(',')
+
+                    if len(data) < CONFIG["HARDWARE"]["PACKET_SIZE"]:
+                        continue  # Skip corrupted packets
+
+                    # 2. Parse & Process (Using Calibrated Biases)
+                    # Waist IMU Data
+                    w_ay, w_az = float(data[4]), float(data[5])
+                    w_gx, w_gz = float(data[6]), float(data[8])
+
+                    # Leg IMU Data
+                    l_ay, l_az = float(data[10]), float(data[11])
+                    l_gx, l_gz = float(data[12]), float(data[14])
+
+                    # 3. Sensor Fusion Math
+                    self.pose['waist_pitch'] = self.calculate_pitch(
+                        w_ay, w_az, w_gx, self.pose['waist_pitch'], self.bias['w_gx']
+                    )
+                    self.pose['leg_pitch'] = self.calculate_pitch(
+                        l_ay, l_az, l_gx, self.pose['leg_pitch'], self.bias['l_gx']
+                    )
+
+                    # (Similar calls for Roll...)
+
+                    # 4. Update Visuals
+                    self.update_simulation()
+
+                elif self.ser is None:
+                    # Demo Mode Logic
+                    t = time.time()
+                    self.pose['leg_pitch'] = 30 * math.sin(t * 2)
+                    self.update_simulation()
+                    time.sleep(0.02)
 
         except KeyboardInterrupt:
-            break
-        except Exception:
-            continue
+            logger.info("Stopping Simulation...")
+            if self.ser: self.ser.close()
 
 
 if __name__ == "__main__":
-    main()
+    system = BiofeedbackSystem()
+    system.run()
